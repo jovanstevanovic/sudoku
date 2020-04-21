@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="03d22c53-6fe2-475f-8394-f9159fd12780" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="SBT">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Sudoku" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1aToaNsgNmFF7tZgWb3LHS3ZmAW" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager" selected="Application.GUI">
+    <configuration name="AwtLayoutDemo" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="AwtLayoutDemo" />
+      <module name="Sudoku" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CardLayoutDemo" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="CardLayoutDemo" />
+      <module name="Sudoku" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CardLayoutExample" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="CardLayoutExample" />
+      <module name="Sudoku" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GUI" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="gui.GUI" />
+      <module name="Sudoku" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SwingExample" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="SwingExample" />
+      <module name="Sudoku" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.GUI" />
+        <item itemvalue="Application.AwtLayoutDemo" />
+        <item itemvalue="Application.CardLayoutExample" />
+        <item itemvalue="Application.CardLayoutDemo" />
+        <item itemvalue="Application.SwingExample" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="availableProjects">
+      <map>
+        <entry>
+          <key>
+            <ExternalProjectPojo>
+              <option name="name" value="Sudoku" />
+              <option name="path" value="$PROJECT_DIR$" />
+            </ExternalProjectPojo>
+          </key>
+          <value>
+            <list>
+              <ExternalProjectPojo>
+                <option name="name" value="sudoku [file:/C:/pp1lab.templateAST/workspace/Sudoku/]" />
+                <option name="path" value="$PROJECT_DIR$" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="Sudoku-build" />
+                <option name="path" value="$PROJECT_DIR$/project" />
+              </ExternalProjectPojo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="modificationStamps">
+      <map>
+        <entry key="$PROJECT_DIR$" value="3173538013784" />
+        <entry key="$PROJECT_DIR$/build.sbt" value="1489583159" />
+        <entry key="$PROJECT_DIR$/project/build.properties" value="1026143456" />
+      </map>
+    </option>
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$" value="RE_IMPORT" />
+      </map>
+    </option>
+  </component>
+  <component name="ScalaProjectSettings">
+    <option name="dontShowConversionDialog" value="true" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="03d22c53-6fe2-475f-8394-f9159fd12780" name="Default Changelist" comment="" />
+      <created>1586769006877</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586769006877</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="499" y="167" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1586897266740">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="167" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1586897266740" />
+    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser" timestamp="1586789001687">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1586789001687" />
+    <state x="493" y="101" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1586771239692">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="493" y="101" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1536.824@0.0.1536.824" timestamp="1586771239692" />
+    <state x="908" y="174" width="488" height="587" key="#xdebugger.evaluate" timestamp="1586951361825">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="908" y="174" width="488" height="587" key="#xdebugger.evaluate/0.0.1536.824@0.0.1536.824" timestamp="1586951361825" />
+    <state x="549" y="154" key="FileChooserDialogImpl" timestamp="1587467011667">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587467011667" />
+    <state width="1493" height="216" key="GridCell.Tab.0.bottom" timestamp="1586954498923">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="216" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586954498923" />
+    <state width="1493" height="216" key="GridCell.Tab.0.center" timestamp="1586954498917">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="216" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586954498917" />
+    <state width="1493" height="216" key="GridCell.Tab.0.left" timestamp="1586954498917">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="216" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586954498917" />
+    <state width="1493" height="216" key="GridCell.Tab.0.right" timestamp="1586954498917">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="216" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586954498917" />
+    <state width="1493" height="216" key="GridCell.Tab.1.bottom" timestamp="1586954498923">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="216" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586954498923" />
+    <state width="1493" height="216" key="GridCell.Tab.1.center" timestamp="1586954498923">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="216" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1586954498923" />
+    <state width="1493" height="216" key="GridCell.Tab.1.left" timestamp="1586954498923">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="216" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1586954498923" />
+    <state width="1493" height="216" key="GridCell.Tab.1.right" timestamp="1586954498923">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="216" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1586954498923" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1586938788238">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1586938788238" />
+    <state x="463" y="10" width="609" height="804" key="find.popup" timestamp="1586804391252">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="463" y="10" width="609" height="804" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1586804391252" />
+    <state x="209" y="137" key="new project wizard" timestamp="1586812393881">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="209" y="137" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1586812393881" />
+    <state x="431" y="145" key="search.everywhere.popup" timestamp="1586880227732">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1586880227732" />
+  </component>
+</project>
