@@ -38,7 +38,7 @@ object FileUtils {
   }
 
   // mode == 0 - examples ; mode == 1 - operations ; mode == 2 - solutions
-  def createNewFile(fileText : String, mode : Int) : Unit = {
+  def createNewFile(fileText : String, mode : Int, filename : String = ""): Unit = {
     var nextId : Int = 0
     var path : String = ""
 
@@ -57,7 +57,14 @@ object FileUtils {
         path = PATH_TO_SOLUTIONS
     }
 
-    val newFile = new File(path + "\\file_" + nextId + ".txt")
+    var filePath : String = ""
+    if(filename.isEmpty) {
+      filePath = path + "\\file_" + nextId + ".txt"
+    } else {
+      filePath = path + "\\" + filename + ".txt"
+    }
+
+    val newFile = new File(filePath)
     try {
       newFile.createNewFile()
       writeInFile(newFile, fileText)

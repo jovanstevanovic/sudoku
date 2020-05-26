@@ -32,6 +32,14 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Package Object" />
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
@@ -42,10 +50,28 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ProjectASM" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
-  <component name="RunManager" selected="Application.GUI">
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.SudokuTest">
     <configuration name="AwtLayoutDemo" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="AwtLayoutDemo" />
       <module name="Sudoku" />
@@ -80,20 +106,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SwingExample" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="SwingExample" />
+    <configuration name="SudokuTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Sudoku" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SudokuTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SudokuTest" />
         <item itemvalue="Application.GUI" />
         <item itemvalue="Application.AwtLayoutDemo" />
         <item itemvalue="Application.CardLayoutExample" />
         <item itemvalue="Application.CardLayoutDemo" />
-        <item itemvalue="Application.SwingExample" />
       </list>
     </recent_temporary>
   </component>
@@ -152,10 +180,14 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="499" y="167" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1586897266740">
+    <state x="365" y="43" key="#All_in_Sudoku" timestamp="1588721994620">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="167" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1586897266740" />
+    <state x="365" y="43" key="#All_in_Sudoku/0.0.1536.824@0.0.1536.824" timestamp="1588721994620" />
+    <state x="499" y="167" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1588424288165">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="167" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1588424288165" />
     <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser" timestamp="1586789001687">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -164,50 +196,58 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="493" y="101" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1536.824@0.0.1536.824" timestamp="1586771239692" />
-    <state x="908" y="174" width="488" height="587" key="#xdebugger.evaluate" timestamp="1586951361825">
+    <state x="744" y="220" width="488" height="587" key="#xdebugger.evaluate" timestamp="1588791586043">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="908" y="174" width="488" height="587" key="#xdebugger.evaluate/0.0.1536.824@0.0.1536.824" timestamp="1586951361825" />
-    <state x="549" y="154" key="FileChooserDialogImpl" timestamp="1587467011667">
+    <state x="744" y="220" width="488" height="587" key="#xdebugger.evaluate/0.0.1536.824@0.0.1536.824" timestamp="1588791586043" />
+    <state x="549" y="154" key="FileChooserDialogImpl" timestamp="1587471369474">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587467011667" />
-    <state width="1493" height="216" key="GridCell.Tab.0.bottom" timestamp="1586954498923">
+    <state x="549" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587471369474" />
+    <state width="1493" height="216" key="GridCell.Tab.0.bottom" timestamp="1588792485215">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="216" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586954498923" />
-    <state width="1493" height="216" key="GridCell.Tab.0.center" timestamp="1586954498917">
+    <state width="1493" height="216" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588792485215" />
+    <state width="1493" height="216" key="GridCell.Tab.0.center" timestamp="1588792485215">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="216" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586954498917" />
-    <state width="1493" height="216" key="GridCell.Tab.0.left" timestamp="1586954498917">
+    <state width="1493" height="216" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588792485215" />
+    <state width="1493" height="216" key="GridCell.Tab.0.left" timestamp="1588792485215">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="216" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586954498917" />
-    <state width="1493" height="216" key="GridCell.Tab.0.right" timestamp="1586954498917">
+    <state width="1493" height="216" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588792485215" />
+    <state width="1493" height="216" key="GridCell.Tab.0.right" timestamp="1588792485215">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="216" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586954498917" />
-    <state width="1493" height="216" key="GridCell.Tab.1.bottom" timestamp="1586954498923">
+    <state width="1493" height="216" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588792485215" />
+    <state width="1493" height="254" key="GridCell.Tab.1.bottom" timestamp="1588792303691">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="216" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586954498923" />
-    <state width="1493" height="216" key="GridCell.Tab.1.center" timestamp="1586954498923">
+    <state width="1493" height="254" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588792303691" />
+    <state width="1493" height="254" key="GridCell.Tab.1.center" timestamp="1588792303691">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="216" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1586954498923" />
-    <state width="1493" height="216" key="GridCell.Tab.1.left" timestamp="1586954498923">
+    <state width="1493" height="254" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1588792303691" />
+    <state width="1493" height="254" key="GridCell.Tab.1.left" timestamp="1588792303691">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="216" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1586954498923" />
-    <state width="1493" height="216" key="GridCell.Tab.1.right" timestamp="1586954498923">
+    <state width="1493" height="254" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1588792303691" />
+    <state width="1493" height="254" key="GridCell.Tab.1.right" timestamp="1588792303691">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="216" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1586954498923" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1586938788238">
+    <state width="1493" height="254" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1588792303691" />
+    <state x="277" y="0" key="SettingsEditor" timestamp="1588721557139">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1586938788238" />
+    <state x="277" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1588721557139" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1589526455971">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1589526455971" />
+    <state x="498" y="305" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1588721863450">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="498" y="305" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1536.824@0.0.1536.824" timestamp="1588721863450" />
     <state x="463" y="10" width="609" height="804" key="find.popup" timestamp="1586804391252">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -216,9 +256,39 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="209" y="137" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1586812393881" />
+    <state x="540" y="115" key="org.jetbrains.plugins.scala.testingSupport.ScalaTestCreator$$anon$1$$anon$2" timestamp="1588722075564">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="540" y="115" key="org.jetbrains.plugins.scala.testingSupport.ScalaTestCreator$$anon$1$$anon$2/0.0.1536.824@0.0.1536.824" timestamp="1588722075564" />
     <state x="431" y="145" key="search.everywhere.popup" timestamp="1586880227732">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="431" y="145" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1586880227732" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/gui/EditTableCard.scala</url>
+          <line>179</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/model/Model.scala</url>
+          <line>179</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/model/Model.scala</url>
+          <line>117</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/model/Model.scala</url>
+          <line>202</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

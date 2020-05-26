@@ -34,12 +34,12 @@ class PlayGameCard(val cardLayout: CardLayout, val parentsContainer : Container)
       cells(i)(j).getDocument.addDocumentListener(new DocumentListener {
         override def insertUpdate(e: DocumentEvent): Unit = {
           if (e.getOffset == 0) // Added first number
-            Model.updateDate(i, j, cells(i)(j).getText.toInt)
+            Model.setCellValue(i, j, cells(i)(j).getText.toInt)
         }
 
         override def removeUpdate(e: DocumentEvent): Unit = {
           if (e.getOffset == 0) // Deleted last number
-            Model.updateDate(i, j, -1)
+            Model.setCellValue(i, j, -1)
         }
 
         override def changedUpdate(e: DocumentEvent): Unit = {}

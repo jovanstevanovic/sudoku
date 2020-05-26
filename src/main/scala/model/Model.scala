@@ -15,6 +15,7 @@ object Model {
 
   // Object's fields
   private var data = Array.ofDim[DataUnit](DIMENSION, DIMENSION)
+  private var tempData = Array.ofDim[DataUnit](DIMENSION, DIMENSION)
   private var activeCells = Array.ofDim[JTextField](DIMENSION, DIMENSION)
   private var playGameCells = Array.ofDim[JTextField](DIMENSION, DIMENSION)
   private var editTableCells = Array.ofDim[JTextField](DIMENSION, DIMENSION)
@@ -34,29 +35,47 @@ object Model {
   private def initializeData() : Unit = {
     for(i <- 0 until DIMENSION; j <- 0 until DIMENSION)
       data(i)(j) = new DataUnit(-1, false)
+
+    for(i <- 0 until DIMENSION; j <- 0 until DIMENSION)
+      tempData(i)(j) = new DataUnit(-1, false)
   }
 
-  def updateDate(n : Int, m : Int, value : Int) : Unit = {
-    data(n)(m).info = value
+  def setCellValue(n : Int, m : Int, value : Int) : Unit = {
+    if(!data(n)(m).original)
+      data(n)(m).info = value
   }
 
-  // mode == 0 - play game mode ; mode == 1 - edit sudoku table
-  def loadFile(file : File, mode: Int) : Unit = {
-    if (mode == 0) {
-      this.activeCells = playGameCells
-    } else {
-      this.activeCells = editTableCells
+  def removeCellValue(n : Int, m : Int, isTesting : Boolean = false) : Unit = {
+    if(!data(n)(m).original) {
+      data(n)(m).info = -1
+      if(!isTesting)
+        refreshTableState()
     }
-
-    val courser = FileUtils.readFile(file, data, mode)
-    cursor_x = courser._1
-    cursor_y = courser._2
-
-    refreshTableState()
-    refreshCursorState()
   }
 
-  def refreshTableState() : Unit = {
+  // mode == 0 - play game mode ; mode == 1 - edit sudoku table ; mode == 2 - testing
+  def loadFile(file : File, mode: Int, isTesting : Boolean = false) : Unit = {
+    if(isTesting) {
+      val courser = FileUtils.readFile(file, data, mode)
+      cursor_x = courser._1
+      cursor_y = courser._2
+    } else {
+      if (mode == 0) {
+        this.activeCells = playGameCells
+      } else {
+        this.activeCells = editTableCells
+      }
+
+      val courser = FileUtils.readFile(file, data, mode)
+      cursor_x = courser._1
+      cursor_y = courser._2
+
+      refreshTableState()
+      refreshCursorState()
+    }
+  }
+
+  private def refreshTableState() : Unit = {
     for(i <- 0 until Model.DIMENSION; j <- 0 until Model.DIMENSION) {
       if (data(i)(j).info != -1)
         activeCells(i)(j).setText(data(i)(j).info.toString)
@@ -70,7 +89,7 @@ object Model {
     activeCells(cursor_x)(cursor_y).setFont(nonSelectedCellFont)
   }
 
-  def refreshCursorState() : Unit = {
+  private def refreshCursorState() : Unit = {
     activeCells(cursor_x)(cursor_y).setFont(selectedCellFont)
     activeCells(cursor_x)(cursor_y).requestFocus()
   }
@@ -84,23 +103,31 @@ object Model {
     }
   }
 
-  def transposeMatrix() : Unit = {
+  def transposeMatrix(isTesting : Boolean = false) : Unit = {
     for(i <- 0 until DIMENSION; j <- i until DIMENSION) {
-      val temp = data(i)(j).info
+      val tempInfo = data(i)(j).info
       data(i)(j).info = data(j)(i).info
-      data(j)(i).info = temp
+      data(j)(i).info = tempInfo
+
+      val tempBool = data(i)(j).original
+      data(i)(j).original = data(j)(i).original
+      data(j)(i).original = tempBool
     }
 
-    refreshTableState()
-    refreshCursorState()
+    if(!isTesting) {
+      refreshTableState()
+      refreshCursorState()
+    }
   }
 
-  def complementMatrix() : Unit = {
+  def complementMatrix(isTesting : Boolean = false) : Unit = {
     for(i <- 0 until DIMENSION; j <- 0 until DIMENSION if data(i)(j).info != -1)
       data(i)(j).info = DIMENSION - data(i)(j).info + 1
 
-    refreshTableState()
-    refreshCursorState()
+    if(!isTesting) {
+      refreshTableState()
+      refreshCursorState()
+    }
   }
 
   def filterRowAndColumn() : Unit = {
@@ -141,20 +168,60 @@ object Model {
     refreshCursorState()
   }
 
-  def executeOperation(file : File) : Unit = {
-    val moves : String = FileUtils.getFileContent(file)
-    for(singleMove <- moves) {
-      if (!singleMove.isDigit)
-        move(singleMove)
-      else {
-        if(!data(cursor_x)(cursor_y).original) {
-          data(cursor_x)(cursor_y).info = singleMove.toInt - '0'.toInt
-          activeCells(cursor_x)(cursor_y).setText(singleMove.toString)
-        }
-      }
+  private def moveCursor(x : Int, y : Int): Unit = {
+    restorePreviousCellState()
+    cursor_x = x
+    cursor_y = y
+    refreshCursorState()
+  }
+
+  private def generateCursorsPathTrace(x : Int, y : Int): String = {
+    val stringBuilder : StringBuilder = new StringBuilder
+    if(cursor_x - x < 0) {
+      for(i <- 0 until x - cursor_x)
+        stringBuilder.append("d")
+    } else {
+      for(i <- 0 until cursor_x - x)
+        stringBuilder.append("u")
     }
 
-    refreshCursorState()
+    if(cursor_y - y < 0) {
+      for(i <- 0 until y - cursor_y)
+        stringBuilder.append("r")
+    } else {
+      for(i <- 0 until cursor_y - y)
+        stringBuilder.append("l")
+    }
+
+    moveCursor(x, y)
+    stringBuilder.toString
+  }
+
+  def executeOperation(file : File) : Unit = {
+    val operationsString : String = FileUtils.getFileContent(file)
+    for(operation <- Parser.parseLine(operationsString)) {
+      operation.functionName match {
+        case "sc" =>
+          moveCursor(operation.op1, operation.op2)
+        case "sv" =>
+          moveCursor(operation.op1, operation.op2)
+          setCellValue(operation.op1, operation.op2, operation.op3)
+          refreshTableState()
+        case "dv" =>
+          moveCursor(operation.op1, operation.op2)
+          removeCellValue(operation.op1, operation.op2)
+        case "tr" =>
+          transposeMatrix()
+        case "inv" =>
+          complementMatrix()
+        case "frc" =>
+          moveCursor(operation.op1, operation.op2)
+          filterRowAndColumn()
+        case "fsm" =>
+          moveCursor(operation.op1, operation.op2)
+          filterSubMatrix()
+      }
+    }
   }
 
   def saveTableIntoFile() : Unit = {
@@ -165,24 +232,32 @@ object Model {
   }
 
   def saveOperationIntoFile(operations : String) : Unit = {
-    FileUtils.createNewFile(operations, 1)
-
-    refreshCursorState()
-  }
-
-  def saveSolutionIntoFile() : Unit = {
-    val tableContent : String = convertCellDataToString(2)
-    FileUtils.createNewFile(tableContent, 2)
-
-    refreshCursorState()
-  }
-
-  // mode == 0 - examples ; mode == 1 - operations ; mode == 2 - solutions
-  def convertCellDataToString(mode : Int = 0) : String = {
-    val stringBuilder : StringBuilder = new StringBuilder
-    if (mode != 2) {
-      data(cursor_x)(cursor_y).info = 10 // Special mark for cursor
+    if(!operations.contains("?")) {
+      // String with user's input didn't contain specified file name.
+      FileUtils.createNewFile(operations, 1)
+    } else {
+      // User specified filename. Format is: filename?f1>f2>f3>args
+      FileUtils.createNewFile(operations.split("\\?")(1), 1, operations.split("\\?")(0))
     }
+
+    refreshCursorState()
+  }
+
+  private def saveSolutionIntoFile() : Unit = {
+    val stringBuilder : StringBuilder = new StringBuilder
+    for(i <- 0 until DIMENSION; j <- 0 until DIMENSION) {
+      if(tempData(i)(j).info == -1)
+        stringBuilder.append(generateCursorsPathTrace(i, j)).append(data(i)(j).info).append("\n")
+    }
+    FileUtils.createNewFile(stringBuilder.toString, 2)
+
+    refreshCursorState()
+  }
+
+  def convertCellDataToString() : String = {
+    val stringBuilder : StringBuilder = new StringBuilder
+    data(cursor_x)(cursor_y).info = 10 // Special mark for cursor
+
     for(i <- 0 until DIMENSION) {
       for(j <- 0 until DIMENSION) {
         if(data(i)(j).info == -1)
@@ -199,24 +274,37 @@ object Model {
     stringBuilder.toString()
   }
 
-  def possibleDigits(board: Array[Array[DataUnit]], r: Int, c: Int): Seq[Int] = {
+  private def possibleDigits(board: Array[Array[DataUnit]], r: Int, c: Int): Seq[Int] = {
     def cells(i: Int) =
       Seq(board(r)(i).info, board(i)(c).info, board(s * (r / s) + i / s)(s * (c / s) + i % s).info)
     val used = board.indices.flatMap(cells)
     (1 to 9).diff(used)
   }
 
-  def solve(board: Array[Array[DataUnit]], cell: Int = 0): Option[Array[Array[DataUnit]]] =
+  private def solve(board: Array[Array[DataUnit]], cell: Int = 0): Option[Array[Array[DataUnit]]] =
     (cell % DIMENSION, cell / DIMENSION) match {
       case (0, 9) => Some(board)
       case (r, c) if board(r)(c).info > 0 => solve(board, cell + 1)
       case (r, c) => possibleDigits(board, r, c)
         .flatMap(n => solve(board.updated(r, board(r).updated(c, new DataUnit(n, board(r)(c).original)))))
         .headOption
+    }
+
+  private def saveCurrentDataIntoTempField(): Unit = {
+    for(i <- 0 until DIMENSION; j <- 0 until DIMENSION) {
+      tempData(i)(j).info = data(i)(j).info
+      tempData(i)(j).original = data(i)(j).original
+    }
   }
 
-  def solveSudoku() : Unit = {
+  def solveSudoku(): Unit = {
+    // Save current data's current state.
+    saveCurrentDataIntoTempField()
+
+    // Solve sudoku.
     data = solve(data).get
+
+    // Save steps for solving into file.
     saveSolutionIntoFile()
   }
 

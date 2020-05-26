@@ -33,12 +33,12 @@ class EditTableCard(val cardLayout: CardLayout, val parentsContainer : Container
       cells(i)(j).getDocument.addDocumentListener(new DocumentListener {
         override def insertUpdate(e: DocumentEvent): Unit = {
           if (e.getOffset == 0) // Added first number
-            Model.updateDate(i, j, cells(i)(j).getText.toInt)
+            Model.setCellValue(i, j, cells(i)(j).getText.toInt)
         }
 
         override def removeUpdate(e: DocumentEvent): Unit = {
           if (e.getOffset == 0) // Deleted last number
-            Model.updateDate(i, j, -1)
+            Model.setCellValue(i, j, -1)
         }
 
         override def changedUpdate(e: DocumentEvent): Unit = {}
@@ -177,7 +177,11 @@ class EditTableCard(val cardLayout: CardLayout, val parentsContainer : Container
       override def actionPerformed(e: ActionEvent): Unit = {
         if (!namedOperationsTextField.getText().isEmpty) {
           Model.saveOperationIntoFile(namedOperationsTextField.getText)
-          gameStatusLabel.setText("Status: Operation saved in file_" + FileUtils.nextIdOperations + ".txt!")
+          if(namedOperationsTextField.getText.contains("?")) {
+            gameStatusLabel.setText("Status: Operation saved in " + namedOperationsTextField.getText.split("\\?")(0) + ".txt!")
+          } else {
+            gameStatusLabel.setText("Status: Operation saved in file_" + FileUtils.nextIdOperations + ".txt!")
+          }
           namedOperationsTextField.setText("")
         } else {
           gameStatusLabel.setText("Status: Operation is empty!")
